@@ -1,0 +1,5 @@
+4 3
+21 Vovkanych 4 4 4 4 4 4
+23 Konoval 2 3 3 4 4 40
+44 Shevchenko 5 6 6 10 10 12
+1 Stahiv 67 69 69 100 100 104

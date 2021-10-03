@@ -1,0 +1,16 @@
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\bin\Debug\net5.0\hw3b.exe
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\bin\Debug\net5.0\hw3b.deps.json
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\bin\Debug\net5.0\hw3b.runtimeconfig.json
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\bin\Debug\net5.0\hw3b.runtimeconfig.dev.json
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\bin\Debug\net5.0\hw3b.dll
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\bin\Debug\net5.0\ref\hw3b.dll
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\bin\Debug\net5.0\hw3b.pdb
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.csproj.AssemblyReference.cache
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.AssemblyInfoInputs.cache
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.AssemblyInfo.cs
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.csproj.CoreCompileInputs.cache
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.dll
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\ref\hw3b.dll
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.pdb
+C:\Users\mykha\Desktop\Sigma_School\homework\hw3b\obj\Debug\net5.0\hw3b.genruntimeconfig.cache
