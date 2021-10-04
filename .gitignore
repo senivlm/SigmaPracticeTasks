@@ -19,8 +19,6 @@ bld/
 [Oo]bj/
 build/
 .vscode/
-bin/
-obj/
 # Roslyn cache directories
 *.ide/
 .vs/
