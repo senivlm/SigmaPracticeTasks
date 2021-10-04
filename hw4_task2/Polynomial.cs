@@ -184,10 +184,23 @@ namespace hw4
             }
         }
 
+        public Polynomial Multiply(Polynomial pn)
+        {
+            Polynomial result = new Polynomial();
+            for (int i = 0; i < this.Rank; ++i)
+            {
+                for (int j = 0; j < pn.Rank; ++j)
+                {
+                    result[i + j] = this[i] * pn[j];
+                }
+            }
+            return result;
+        }
+
         public static Polynomial Parse(string s)
         {
             string currentDS = new CultureInfo(CultureInfo.CurrentCulture.Name, false).NumberFormat.NumberDecimalSeparator;
-            
+
             string[] additions = s
                     .Replace(" ", "")
                     .Replace(".", currentDS)
