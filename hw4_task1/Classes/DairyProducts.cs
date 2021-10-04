@@ -31,43 +31,7 @@ namespace hw4_task1
                 base.ChangePrice(-0.1);
             }
         }
-        protected override void Parse(string s)
-        {
-            string[] fields = s.Split(";", StringSplitOptions.RemoveEmptyEntries);
-
-            if (fields.Length != 5)
-            {
-                throw new ArgumentException($"{nameof(s)} has wrong format. String must contain 5 values separated by \";\" symbol whithout spaces");
-            }
-
-            string prodName = fields[0];
-
-            if (!double.TryParse(fields[1], out double price))
-            {
-                throw new ArgumentException("Wrong price format");
-            }
-            if (!double.TryParse(fields[2], out double weight))
-            {
-                throw new ArgumentException("Wrong weight format");
-            }
-            if (!int.TryParse(fields[3], out int expiration))
-            {
-                throw new ArgumentException("Wrong expiration days format");
-            }
-            if (!DateTime.TryParse(fields[4], out DateTime madeDate))
-            {
-                throw new ArgumentException("Wrong production date format");
-            }
-
-
-
-            this.Name = prodName;
-            this.Price = price;
-            this.Weight = weight;
-            this.Expiration = expiration;
-            this.MadeDate = madeDate;
-        }
-
+    
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();

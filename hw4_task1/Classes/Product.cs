@@ -16,7 +16,7 @@ namespace hw4_task1
             get => _name;
             set
             {
-                if (String.Compare(value, "") != 0)
+                if (!String.IsNullOrEmpty(value))
                 {
                     _name = value;
                 }
