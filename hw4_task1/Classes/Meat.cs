@@ -1,12 +1,13 @@
 using System;
+using System.Linq;
 using System.Text;
 
-namespace hw2
+namespace hw4_task1
 {
     public class Meat : Product
     {
-        private MeatCategory _category;
-        private MeatSort _sort;
+        private MeatCategory _category = MeatCategory.Second;
+        private MeatSort _sort = MeatSort.Chicken;
 
         public MeatCategory Category
         {
@@ -31,12 +32,41 @@ namespace hw2
             }
         }
 
-        public Meat(string name, double price, double weight, MeatCategory category, MeatSort sort) : base(name, price, weight)
+        public Meat(string name, double price, double weight, int expiration, DateTime madeDate, MeatCategory category, MeatSort sort)
+        : base(name, price, weight, expiration, madeDate)
         {
             Category = category;
             Sort = sort;
         }
+        public Meat(string s)
+        {
+            Parse(s);
+        }
+        
+        protected override void Parse(string s)
+        {
+            string[] fields = s.Split(";", StringSplitOptions.RemoveEmptyEntries);
+           
+            if (fields.Length != 7)
+            {
+                throw new ArgumentException(@$"{nameof(s)} has wrong format. String must contain 9 values separated by ;
+                symbol whithout spaces (spaces in product name are allowed");
+            }
 
+            base.Parse(String.Join(";", fields.Where( (_, index) => index < 5 )));
+
+            if (!Enum.TryParse(typeof(MeatCategory), fields[5], true, out var category))
+            {
+                throw new ArgumentException("Wrong type of Meat Category. Allowed values: High, First, Second");
+            }
+            if (!Enum.TryParse(typeof(MeatSort), fields[6], true, out var sort))
+            {
+                throw new ArgumentException("Wrong type of Meat Sort. Allowed values: Mutton, Beef, Pork, Chicken");
+            }
+           
+            this.Category = (MeatCategory)category;
+            this.Sort = (MeatSort)sort;
+        }
         public override void ChangePrice(double diff)
         {
             base.ChangePrice(diff);

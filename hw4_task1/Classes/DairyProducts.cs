@@ -1,32 +1,18 @@
 using System;
 using System.Text;
 
-namespace hw2
+namespace hw4_task1
 {
     public class DairyProducts : Product
     {
-        private int _expiration;
 
-        public int Expiration
-        {
-            get => _expiration;
-            set
-            {
-                if (value > 0)
-                {
-                    _expiration = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Number of days to expiration must be a positive number");
-                }
-            }
-        }
+        public bool IsValid { get => MadeDate.AddDays(Expiration) > DateTime.Today; }
 
-        public DairyProducts(string name, double price, double weight, int expiration) : base(name, price, weight)
+        public DairyProducts(string name, double price, double weight, int expiration, DateTime madeDate)
+        : base(name, price, weight, expiration, madeDate)
         {
-            Expiration = expiration;
         }
+        public DairyProducts(string s) : base(s) { }
 
         public override void ChangePrice(double diff)
         {
@@ -45,17 +31,53 @@ namespace hw2
                 base.ChangePrice(-0.1);
             }
         }
+        protected override void Parse(string s)
+        {
+            string[] fields = s.Split(";", StringSplitOptions.RemoveEmptyEntries);
+
+            if (fields.Length != 5)
+            {
+                throw new ArgumentException($"{nameof(s)} has wrong format. String must contain 5 values separated by \";\" symbol whithout spaces");
+            }
+
+            string prodName = fields[0];
+
+            if (!double.TryParse(fields[1], out double price))
+            {
+                throw new ArgumentException("Wrong price format");
+            }
+            if (!double.TryParse(fields[2], out double weight))
+            {
+                throw new ArgumentException("Wrong weight format");
+            }
+            if (!int.TryParse(fields[3], out int expiration))
+            {
+                throw new ArgumentException("Wrong expiration days format");
+            }
+            if (!DateTime.TryParse(fields[4], out DateTime madeDate))
+            {
+                throw new ArgumentException("Wrong production date format");
+            }
+
+
+
+            this.Name = prodName;
+            this.Price = price;
+            this.Weight = weight;
+            this.Expiration = expiration;
+            this.MadeDate = madeDate;
+        }
 
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();
             result.Append(base.ToString());
-            result.Append("Expiration date: " + _expiration.ToString() + "\n");
+            result.Append("Expiration date: " + Expiration.ToString() + "\n");
             return result.ToString();
         }
         public override int GetHashCode()
         {
-            return (base.GetHashCode() << 2) ^ _expiration;
+            return (base.GetHashCode() << 2) ^ Expiration;
         }
         public override bool Equals(object obj)
         {

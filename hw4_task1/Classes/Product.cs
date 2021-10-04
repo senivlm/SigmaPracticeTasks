@@ -1,13 +1,15 @@
 using System;
 using System.Text;
-
-namespace hw2
+using System.Globalization;
+namespace hw4_task1
 {
     public class Product
     {
-        private string _name;
-        private double _price;
-        private double _weight;
+        private string _name = "Unnamed";
+        private double _price = 0;
+        private double _weight = 0;
+        private int _expiration = 0;
+        private DateTime _madeDate = DateTime.Today;
 
         public string Name
         {
@@ -54,12 +56,45 @@ namespace hw2
                 }
             }
         }
+        public int Expiration
+        {
+            get => _expiration;
+            set
+            {
+                if (value > 0)
+                {
+                    _expiration = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Days to expire value must be a positive number");
+                }
+            }
+        }
+        public DateTime MadeDate
+        {
+            get => _madeDate;
+            set
+            {
+                _madeDate = value;
+            }
+        }
 
-        public Product(string name, double price, double weight)
+        public Product()
+        {
+
+        }
+        public Product(string name, double price, double weight, int expiration, DateTime madeDate)
         {
             Name = name;
             Price = price;
             Weight = weight;
+            Expiration = expiration;
+            MadeDate = madeDate;
+        }
+        public Product(string info)
+        {
+            Parse(info);
         }
         public virtual void ChangePrice(double diff)
         {
@@ -95,5 +130,41 @@ namespace hw2
             }
 
         }
+
+        protected virtual void Parse(string s)
+        {
+            string[] fields = s.Split(";", StringSplitOptions.RemoveEmptyEntries);
+
+            if (fields.Length != 5)
+            {
+                throw new ArgumentException($"{nameof(s)} has wrong format. String must contain 5 values separated by \";\" symbol whithout spaces");
+            }
+
+            string prodName = fields[0];
+
+            if (!double.TryParse(fields[1], out double price))
+            {
+                throw new ArgumentException("Wrong price format");
+            }
+            if (!double.TryParse(fields[2], out double weight))
+            {
+                throw new ArgumentException("Wrong weight format");
+            }
+            if (!int.TryParse(fields[3], out int expiration))
+            {
+                throw new ArgumentException("Wrong expiration days format");
+            }
+            if (!DateTime.TryParseExact(fields[4], "dd.MM.yyyy", null , DateTimeStyles.None, out DateTime madeDate))
+            {
+                throw new ArgumentException("Wrong production date format");
+            }
+
+            this.Name = prodName;
+            this.Price = price;
+            this.Weight = weight;
+            this.Expiration = expiration;
+            this.MadeDate = madeDate;
+        }
+
     }
 }

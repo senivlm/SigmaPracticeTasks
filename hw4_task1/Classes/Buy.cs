@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace hw2
+namespace hw4_task1
 {
     public class Buy
     {
@@ -14,7 +14,7 @@ namespace hw2
 
         public Buy(){
             _purchaseList = new List<Product>();
-            _purchaseList.Add(new Product("Default", 1, 1));
+            _purchaseList.Add(new Product("Default", 1, 1, 1, DateTime.Today));
             Amount = 1;
             _totalPrice = _amount * this._purchaseList[0].Price;
             _totalWeight = _amount * this._purchaseList[0].Weight;

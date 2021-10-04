@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace hw2
+namespace hw4_task1
 {
     sealed public class Check
     {
