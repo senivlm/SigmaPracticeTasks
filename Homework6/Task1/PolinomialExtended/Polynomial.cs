@@ -170,7 +170,8 @@ namespace PolinomialExtended
         {
             if (this._coeficients.Count != 0)
             {
-                Polynomial pnResult = new Polynomial(this);
+                Polynomial pnResult = new(this);
+
                 for (int i = 0; i <= Rank; ++i)
                 {
                     if (_coeficients.ContainsKey(i) == true)
