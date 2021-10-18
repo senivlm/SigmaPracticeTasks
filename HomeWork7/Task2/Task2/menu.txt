@@ -1,0 +1,12 @@
+﻿Soup
+Potato 0.2
+Carrot 0.1
+Beet 0.1
+
+Salad
+Carrot 0.2
+Potato 0.4
+Egg 4
+
+Compote
+Chery 0.5
