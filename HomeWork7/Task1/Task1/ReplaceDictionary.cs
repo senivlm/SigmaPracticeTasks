@@ -15,7 +15,7 @@ namespace Task1
         }
 
         public static ReplaceDictionary GenerateDefaultDictionary()
-        {
+        { Хардкод. Треба з файлу довільний читати
             var dict = new ReplaceDictionary
             {
                 ["I"] = "Boy",
@@ -26,7 +26,7 @@ namespace Task1
             return dict;
         }
         public string this[string stringIndex]
-        {
+        { Не варто викидати назовні. Це внутрішня проблема.
             get
             {
                 if (_replaceData.ContainsKey(stringIndex))
