@@ -18,7 +18,7 @@ namespace Task2
             _prices = new Dictionary<string, double>();
         }
         public ProductManager(string menuPath, string pricePath)
-        {
+        {Навіщо все це  зливати в один метод. Не ООП.
             if (!File.Exists(menuPath))
             {
                 throw new FileNotFoundException("File with Menu doesn't exist at specified location");
