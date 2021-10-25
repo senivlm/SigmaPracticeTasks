@@ -1,0 +1,6 @@
+﻿Meat; Beef Steak; 100; 0.5; 30; 24.03.2021; High; Beef
+Dairy; Milk; 40; 0.5; 25; 3.10.2021
+Meat; Chicken Wing; 50; 0.1; 20; 25.06.2021; First; Chicken
+Product; Rice; 30; 0.5; 50; 25.10.2021
+Dairy; Butter; 30; 0.1; 20; 24.04.2020
+Dairy; Cream; 40; 0.2; 15; 25.05.2021
