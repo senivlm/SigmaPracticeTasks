@@ -1,7 +1,7 @@
 ﻿namespace Task1
 {
     class SortDelegate
-    {
+    {делегат краще було винести поза клас
         public delegate int CompareObjects(object obj1, object obj2);
         public static int Sort(object[] objArray, CompareObjects compareMethod)
         {
