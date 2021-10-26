@@ -7,7 +7,7 @@ using System.Text;
 namespace Task3
 {
     class TextWorker
-    {
+    {не повністю виконана умова
         public List<string> Sentences { get; }
 
         public TextWorker()
@@ -64,7 +64,7 @@ namespace Task3
 
             int maxDepth = 0, maxDepthIndex = 0;
             for (int i = 1; i < Sentences.Count; ++i)
-            {
+            {можна обійтись без стеку
                 Stack<char> parenthesesStack = new Stack<char>();
                 int currentDepth = 0, maxCurrentDepth = 0;
                 foreach (var symbol in Sentences[i])
