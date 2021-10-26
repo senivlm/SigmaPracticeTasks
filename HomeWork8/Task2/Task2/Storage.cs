@@ -8,7 +8,7 @@ using System.Text;
 namespace Task2
 {
     public class StorageManager
-    {
+    {ці задачі дійсно гарно розв'язуються з лінками
         public static Storage SearchCommon(Storage list1, Storage list2)
         {
             return new Storage(list1.Assortment
@@ -34,7 +34,7 @@ namespace Task2
         }
     }
     public class Storage
-    {
+    {Порушення інкапсуляції!!!!
         public List<Product> Assortment { get; set; }
 
         public Storage()
