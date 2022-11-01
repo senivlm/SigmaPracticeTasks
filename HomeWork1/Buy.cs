@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace hw1
-{
+{//Чи не краще було одразу зробити методи для обчислення загальної вартості і загальної ваги?
     public class Buy
     {
         private List<Product> _purchaseList;
@@ -19,6 +19,7 @@ namespace hw1
             _totalPrice = _amount * this._purchaseList[0].Price;
             _totalWeight = _amount * this._purchaseList[0].Weight;
         }
+        //вдале використання params. Молодець.
         public Buy(params Product[] products)
         {
             _purchaseList = new List<Product>();
