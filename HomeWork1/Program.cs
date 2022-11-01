@@ -1,13 +1,14 @@
 ﻿using System;
 
 namespace hw1
-{
+{// Вітаю вас. Я бачу Ваш репозиторій і успішно можу робити коментарі. Будь ласка, іменуйте папки згідно з нашою домовленістю.
     public class Program
     {
         static void Main(string[] args)
         {
             try
             {
+                //імені об'єктів записують з маленької літери.
                 Product CPU = new("Intel I9-9900K", 449.90, 0.10);
                 Product GPU = new("nVidia GeForce GTX 3090 Ti", 500, 1);
                 Product RAM = new("Kingston 3200 16 GB", 200, 0.10);
