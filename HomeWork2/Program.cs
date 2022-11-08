@@ -8,7 +8,7 @@ namespace hw2
         static void Main(string[] args)
         {
             try
-            {
+            {// об'єкти з маленької літери
                 Product Processor = new("Intel I9-9900K", 449.90, 0.10);
 
                 Meat Beef = new Meat("Beef meat", 20, 20, MeatCategory.First, MeatSort.Beef);
