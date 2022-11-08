@@ -4,7 +4,7 @@ namespace hw2
 {
 
     public class Program
-    {
+    {// У Вас неправильна нумерація завдань. Залиштеся для індивідуальної перевірки
         static void Main(string[] args)
         {
             try
